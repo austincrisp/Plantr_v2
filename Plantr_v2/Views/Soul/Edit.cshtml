@@ -1,0 +1,127 @@
+﻿@model Plantr_v2.Models.Soul
+
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" action=" " method="post" id="soul_edit">
+            <fieldset>
+                <legend>Update a Soul</legend>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", name = "first_name", placeholder = "First Name", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", name = "last_name", placeholder = "Last Name", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", name = "address", placeholder = "Address", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AptNumber, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.AptNumber, new { htmlAttributes = new { @class = "form-control", name = "apt_number", placeholder = "Apt #", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.AptNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", name = "city", placeholder = "City", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Zip, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control", name = "zip", placeholder = "Zip Code", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.Zip, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", name = "phone", placeholder = "(123)456-7890", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "col-md-4 control-label" })
+                    <div class="col-md-4 InputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-comment" aria-hidden="true"></i></span>
+                            @Html.TextAreaFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control", name = "comments", placeholder = "Additional Comments", type = "text" } })
+                            @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success" role="alert" id="success_message">
+                    Success <i class="glyphicon glyphicon glyphicon-thumbs-up"></i>
+                    Soul has been updated!
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning" value="Save">Update <span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

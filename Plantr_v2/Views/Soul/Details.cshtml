@@ -1,0 +1,130 @@
+﻿@model Plantr_v2.Models.Soul
+
+<div>
+    <h4>Soul</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AptNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AptNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+    <hr />
+    <hr />
+    <div class="row active-with-click">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <article class="material-card Red">
+                <h2>
+                    <span>Bible Correspondence Course</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Lesson One
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">
+                    </div>
+                    <div class="mc-description">
+                        Lesson One Description
+                    </div>
+                </div>
+                <a class="btn mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <button type="button" class="btn btn-primary btn-lg center-block">View Answers</button>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <article class="material-card Red">
+                <h2>
+                    <span>How's Your Hearing<br /></span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        Lesson Two
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-christopher-walken.jpg">
+                    </div>
+                    <div class="mc-description">
+                        Lesson Two Description
+                    </div>
+                </div>
+                <a class="btn mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <button type="button" class="btn btn-primary btn-lg center-block">View Answers</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
