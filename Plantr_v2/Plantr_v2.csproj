@@ -186,6 +186,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SoulController.cs" />
@@ -196,7 +197,20 @@
     <Compile Include="Migrations\201703170317523_Initial.Designer.cs">
       <DependentUpon>201703170317523_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703181904058_addAnswerModel.cs" />
+    <Compile Include="Migrations\201703181904058_addAnswerModel.Designer.cs">
+      <DependentUpon>201703181904058_addAnswerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703190340067_changedBodyToUserAnswer.cs" />
+    <Compile Include="Migrations\201703190340067_changedBodyToUserAnswer.Designer.cs">
+      <DependentUpon>201703190340067_changedBodyToUserAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703190438297_addedColumnsToAnswer.cs" />
+    <Compile Include="Migrations\201703190438297_addedColumnsToAnswer.Designer.cs">
+      <DependentUpon>201703190438297_addedColumnsToAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Soul.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -213,6 +227,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\Course1.png" />
+    <Content Include="img\Course2.png" />
+    <Content Include="img\Course3.png" />
+    <Content Include="img\Course4.png" />
+    <Content Include="img\Course5.png" />
+    <Content Include="img\Course6.png" />
+    <Content Include="img\Course7.png" />
+    <Content Include="img\Course8.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -267,6 +289,8 @@
     <Content Include="Views\Soul\Index.cshtml" />
     <Content Include="Views\Soul\Details.cshtml" />
     <Content Include="Views\Soul\Delete.cshtml" />
+    <Content Include="Views\Answer\SubmitAnswerOneCreate.cshtml" />
+    <Content Include="Views\Answer\SubmitAnswerOneIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +306,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703170317523_Initial.resx">
       <DependentUpon>201703170317523_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703181904058_addAnswerModel.resx">
+      <DependentUpon>201703181904058_addAnswerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703190340067_changedBodyToUserAnswer.resx">
+      <DependentUpon>201703190340067_changedBodyToUserAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703190438297_addedColumnsToAnswer.resx">
+      <DependentUpon>201703190438297_addedColumnsToAnswer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

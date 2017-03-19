@@ -31,7 +31,8 @@ namespace Plantr_v2.Controllers
             {
                 return HttpNotFound();
             }
-            return View(soul);
+            var tuple = new Tuple<Soul, Answer>(soul, new Answer());
+            return View(tuple);
         }
 
         // GET: Soul/Create
