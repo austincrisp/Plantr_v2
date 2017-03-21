@@ -32,13 +32,11 @@ namespace Plantr_v2.Models
         public string AnswerNineteen { get; set; }
         public string AnswerTwenty { get; set; }
 
-        // Foreign Keys
         public int SoulId { get; set; }
+        public int CourseId { get; set; }
 
         [ForeignKey("SoulId")]
         public virtual Soul Soul { get; set; }
-
-        public int CourseId { get; set; }
 
         [ForeignKey("CourseId")]
         public virtual Course Course { get; set; }

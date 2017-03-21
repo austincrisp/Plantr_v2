@@ -209,6 +209,18 @@
     <Compile Include="Migrations\201703190438297_addedColumnsToAnswer.Designer.cs">
       <DependentUpon>201703190438297_addedColumnsToAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703210219284_addedCollections.cs" />
+    <Compile Include="Migrations\201703210219284_addedCollections.Designer.cs">
+      <DependentUpon>201703210219284_addedCollections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703210244481_removedCourseCollectionFromSoul.cs" />
+    <Compile Include="Migrations\201703210244481_removedCourseCollectionFromSoul.Designer.cs">
+      <DependentUpon>201703210244481_removedCourseCollectionFromSoul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703210309134_fixedFKInAnswer.cs" />
+    <Compile Include="Migrations\201703210309134_fixedFKInAnswer.Designer.cs">
+      <DependentUpon>201703210309134_fixedFKInAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
@@ -315,6 +327,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703190438297_addedColumnsToAnswer.resx">
       <DependentUpon>201703190438297_addedColumnsToAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210219284_addedCollections.resx">
+      <DependentUpon>201703210219284_addedCollections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210244481_removedCourseCollectionFromSoul.resx">
+      <DependentUpon>201703210244481_removedCourseCollectionFromSoul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703210309134_fixedFKInAnswer.resx">
+      <DependentUpon>201703210309134_fixedFKInAnswer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

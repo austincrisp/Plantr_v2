@@ -20,20 +20,22 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer/Create
-        public ActionResult Create()
+        public ActionResult SubmitAnswerOneCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerOneCreate([Bind(Include = "Id,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty,CourseId,SoulId")] Answer answer)
+        public ActionResult SubmitAnswerOneCreate([Bind(Include = "Id,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
+                answer.SoulId = soulId;
+                answer.CourseId = 1;
                 db.Answers.Add(answer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Soul", new { id = answer.SoulId });
             }
 
             return View(answer);
