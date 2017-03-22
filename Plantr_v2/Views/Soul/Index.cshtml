@@ -6,6 +6,43 @@
 
 <h2>Index</h2>
 
+<div class="contact_card">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Details", "Soul", new { id = item.Id })"><li>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</li></a>
+        }
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
