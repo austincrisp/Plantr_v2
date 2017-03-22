@@ -26,12 +26,14 @@ namespace Plantr_v2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            TempData["SoulId"] = id;
             Soul soul = db.Souls.Find(id);
             if (soul == null)
             {
                 return HttpNotFound();
             }
             var tuple = new Tuple<Soul, Answer>(soul, new Answer());
+
             return View(tuple);
         }
 
@@ -78,7 +80,7 @@ namespace Plantr_v2.Controllers
             {
                 db.Entry(soul).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Soul", new { id = soul.Id });
             }
             return View(soul);
         }

@@ -110,7 +110,10 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4">
-                        <button type="submit" class="btn btn-warning" value="Save">Update <span class="glyphicon glyphicon-plus"></span></button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" value="Save">Update <span class="glyphicon glyphicon-plus"></span></button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="location.href='@Url.Action("Details", "Soul", new { id = Model.Id })'">
+                            Cancel <i class="material-icons">cancel</i>
+                        </button>
                     </div>
                 </div>
             </fieldset>

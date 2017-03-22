@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201703210309134_fixedFKInAnswer.Designer.cs">
       <DependentUpon>201703210309134_fixedFKInAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703211454091_removedFKCourseFromAnswer.cs" />
+    <Compile Include="Migrations\201703211454091_removedFKCourseFromAnswer.Designer.cs">
+      <DependentUpon>201703211454091_removedFKCourseFromAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
@@ -230,10 +234,12 @@
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SoulAnswer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\contact.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -247,6 +253,7 @@
     <Content Include="img\Course6.png" />
     <Content Include="img\Course7.png" />
     <Content Include="img\Course8.png" />
+    <Content Include="img\Thorns_Globe.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -302,7 +309,9 @@
     <Content Include="Views\Soul\Details.cshtml" />
     <Content Include="Views\Soul\Delete.cshtml" />
     <Content Include="Views\Answer\SubmitAnswerOneCreate.cshtml" />
-    <Content Include="Views\Answer\SubmitAnswerOneIndex.cshtml" />
+    <Content Include="Views\Answer\ViewAnswerOneIndex.cshtml" />
+    <Content Include="Views\Answer\SubmitAnswerTwoCreate.cshtml" />
+    <Content Include="Views\Answer\ViewAnswerTwoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703210309134_fixedFKInAnswer.resx">
       <DependentUpon>201703210309134_fixedFKInAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703211454091_removedFKCourseFromAnswer.resx">
+      <DependentUpon>201703211454091_removedFKCourseFromAnswer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

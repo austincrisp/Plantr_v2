@@ -27,7 +27,8 @@ namespace Plantr_v2
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/style.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/contact.css"));
         }
     }
 }
