@@ -239,7 +239,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\contact.css" />
+    <Content Include="Content\contactDetail.css" />
+    <Content Include="Content\contactIndex.css" />
+    <Content Include="Content\map.css" />
+    <Content Include="Content\modal.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -265,6 +268,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\map.js" />
     <Content Include="Scripts\modal.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
@@ -308,11 +312,11 @@
     <Content Include="Views\Soul\Edit.cshtml" />
     <Content Include="Views\Soul\Index.cshtml" />
     <Content Include="Views\Soul\Details.cshtml" />
-    <Content Include="Views\Soul\Delete.cshtml" />
     <Content Include="Views\Answer\SubmitAnswerOneCreate.cshtml" />
     <Content Include="Views\Answer\ViewAnswerOneIndex.cshtml" />
     <Content Include="Views\Answer\SubmitAnswerTwoCreate.cshtml" />
     <Content Include="Views\Answer\ViewAnswerTwoIndex.cshtml" />
+    <Content Include="Views\Soul\ShowMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

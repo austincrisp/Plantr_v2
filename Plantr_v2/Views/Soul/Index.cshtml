@@ -6,108 +6,18 @@
 
 <h2>Index</h2>
 
-<div class="contact_card">
-    <ul>
-        @foreach (var item in Model)
-        {
-            <a href="@Url.Action("Details", "Soul", new { id = item.Id })"><li>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</li></a>
-        }
-    </ul>
-</div>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="float: right;" onclick="location.href='@Url.Action("Create", "Soul")'">
+    <i class="material-icons">add</i>
+</button>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AptNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
-        <th></th>
-    </tr>
-
+<ul class="contactListWrapper two-columns clearfix animated fadeIn">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AptNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                <a href="@Url.Action("Edit", "Soul", new { id = item.Id })">Edit <span class="fa fa-pencil-square-o" aria-hidden="true"></span></a> |
-                <a href="@Url.Action("Details", "Soul", new { id = item.Id })">Details <span class="fa fa-plus-square-o" aria-hidden="true"></span></a> |
-                <a href="@Url.Action("Delete", "Soul", new { id = item.Id })">Delete <span class="fa fa-times" aria-hidden="true"></span></a>
-            </td>
-        </tr>
-    }
+        <a href="@Url.Action("Details", "Soul", new { id = item.Id })">
+            <li class="contactItem">
+                @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
 
-</table>
+            </li>
+        </a>
+    }
+</ul>

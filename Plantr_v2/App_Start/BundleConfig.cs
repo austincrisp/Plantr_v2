@@ -19,16 +19,19 @@ namespace Plantr_v2
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+            bundles.Add(new ScriptBundle("~/bundles/myscripts").Include(
                       "~/Scripts/course.js",
-                      "~/Scripts/modal.js",
+                      "~/Scripts/map.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/style.css",
                       "~/Content/site.css",
-                      "~/Content/contact.css"));
+                      "~/Content/modal.css",
+                      "~/Content/map.css",
+                      "~/Content/bootstrap.css",
+                      "~/Content/contactIndex.css",
+                      "~/Content/contactDetail.css"));
         }
     }
 }

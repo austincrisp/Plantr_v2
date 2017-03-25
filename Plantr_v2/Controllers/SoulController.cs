@@ -86,29 +86,17 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Soul/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Soul soul = db.Souls.Find(id);
-            if (soul == null)
-            {
-                return HttpNotFound();
-            }
-            return View(soul);
-        }
-
-        // POST: Soul/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Soul soul = db.Souls.Find(id);
             db.Souls.Remove(soul);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ShowMap()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)

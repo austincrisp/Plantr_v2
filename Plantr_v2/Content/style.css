@@ -26,19 +26,22 @@
   }
 }
 .material-card {
-  position: relative;
-  height: 0;
-  padding-bottom: calc(100% - 16px);
-  margin-bottom: 6.6em;
+    position: relative;
+    height: 250px;
+    padding-bottom: calc(100% - 16px);
+    margin-bottom: 9.6em;
+    font-family: 'Noto Sans', sans-serif;
 }
 .material-card h2 {
   position: absolute;
   top: calc(100% - 16px);
   left: 0;
   width: 100%;
+  height: 90px;
+  font-family: 'Noto Sans', sans-serif;
   padding: 10px 16px;
   color: #fff;
-  font-size: 1.4em;
+  font-size: 12pt;
   line-height: 1.6em;
   margin: 0;
   z-index: 10;
@@ -51,29 +54,29 @@
 .material-card h2 span {
   display: block;
 }
-.material-card h2 strong {
-  font-weight: 400;
-  display: block;
-  font-size: .8em;
-}
-.material-card h2:before,
-.material-card h2:after {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: -16px;
-  width: 0;
-  border: 8px solid;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.material-card h2:after {
-  top: auto;
-  bottom: 0;
-}
+    .material-card h2 strong {
+        font-weight: 400;
+        display: block;
+        font-size: .8em;
+    }
+    .material-card h2:before,
+    .material-card h2:after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: -16px;
+        width: 0;
+        border: 8px solid;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .material-card h2:after {
+        top: auto;
+        bottom: 0;
+    }
 @media screen and (max-width: 767px) {
   .material-card.mc-active {
     padding-bottom: 0;
@@ -83,6 +86,7 @@
 .material-card.mc-active h2 {
   top: 0;
   padding: 10px 16px 10px 90px;
+  height: 125px;
 }
 .material-card.mc-active h2:before {
   top: 0;
@@ -104,7 +108,7 @@
 }
 .material-card .mc-btn-action {
   position: absolute;
-  right: 16px;
+  right: 10px;
   top: 15px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1303,108 +1307,7 @@ a {
   color: inherit;
   font-weight: 400;
 }
-/**
- * Material Modal CSS
- */
-.modal {
-  will-change: visibility, opacity;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: 1000;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  -webkit-transition-delay: $modal-delay;
-          transition-delay: $modal-delay;
-}
-.modal--active {
-  visibility: visible;
-  opacity: 1;
-}
-.modal--align-top {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-.modal__bg {
-  background: transparent;
-}
-.modal__dialog {
-  max-width: 600px;
-  padding: 1.2rem;
-}
-.modal__content {
-  will-change: transform, opacity;
-  position: relative;
-  padding: 2.4rem;
-  background: #ffebee;
-  background-clip: padding-box;
-  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
-  opacity: 0;
-  -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.modal__content--active {
-  opacity: 1;
-}
-.modal__close {
-  z-index: 1100;
-  cursor: pointer;
-}
-.modal__trigger {
-  position: relative;
-  display: inline-block;
-  padding: 1.2rem 2.4rem;
-  color: rgba(0,0,0,0.7);
-  line-height: 1;
-  cursor: pointer;
-  background: #ffebee;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.modal__trigger--active {
-  z-index: 10;
-}
-.modal__trigger:hover {
-  background: #e5d3d6;
-}
-#modal__temp {
-  will-change: transform, opacity;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ffebee;
-  -webkit-transform: none;
-          transform: none;
-  opacity: 1;
-  -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
+
 /**
  * Demo specific CSS
  */

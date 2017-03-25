@@ -14,9 +14,10 @@ namespace Plantr_v2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Answer
-        public ActionResult ViewAnswerOneIndex()
+        public ActionResult ViewAnswerOneIndex(Answer answer, int id)
         {
-            return View(db.Answers.Where(a => a.CourseId == 1).ToList());
+            answer.SoulId = (int)TempData["SoulId"];
+            return View(db.Answers.Where(a => a.CourseId == 1 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
@@ -42,8 +43,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerTwoIndex()
+        public ActionResult ViewAnswerTwoIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 2).ToList());
         }
 
@@ -70,8 +72,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerThreeIndex()
+        public ActionResult ViewAnswerThreeIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 3).ToList());
         }
 
@@ -98,8 +101,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerFourIndex()
+        public ActionResult ViewAnswerFourIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 4).ToList());
         }
 
@@ -126,8 +130,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerFivendex()
+        public ActionResult ViewAnswerFivendex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 5).ToList());
         }
 
@@ -154,8 +159,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerSixIndex()
+        public ActionResult ViewAnswerSixIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 6).ToList());
         }
 
@@ -182,8 +188,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerSevenIndex()
+        public ActionResult ViewAnswerSevenIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 7).ToList());
         }
 
@@ -210,8 +217,9 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerEightIndex()
+        public ActionResult ViewAnswerEightIndex(Answer answer, int id)
         {
+            answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 8).ToList());
         }
 
