@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<Plantr_v2.Models.Soul>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DBLayout.cshtml";
 }
 
-<h2>Index</h2>
-
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="float: right;" onclick="location.href='@Url.Action("Create", "Soul")'">
-    <i class="material-icons">add</i>
-</button>
+<div>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="float: right;" onclick="location.href='@Url.Action("Create", "Soul")'">
+        <i class="material-icons">add</i>
+    </button>
+</div>
 
 <ul class="contactListWrapper two-columns clearfix animated fadeIn">
     @foreach (var item in Model)

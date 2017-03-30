@@ -9,7 +9,8 @@ namespace Plantr_v2
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.maskedinput.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -22,14 +23,19 @@ namespace Plantr_v2
             bundles.Add(new ScriptBundle("~/bundles/myscripts").Include(
                       "~/Scripts/course.js",
                       "~/Scripts/map.js",
+                      "~/Scripts/dialog-polyfill.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/style.css",
-                      "~/Content/site.css",
+                      "~/Content/dialog-polyfill.css",
+                      "~/Content/mdl.css",
                       "~/Content/modal.css",
                       "~/Content/map.css",
-                      "~/Content/bootstrap.css",
+                      "~/Content/homePage.css",
+                      "~/Content/dashboard.css",
+                      "~/Content/answerCreate.css",
+                      "~/Content/contactCreate.css",
                       "~/Content/contactIndex.css",
                       "~/Content/contactDetail.css"));
         }

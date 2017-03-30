@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Plantr_v2.Models.Answer>
+
+<h2>Course Five Answers</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerFour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerFive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerSix)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerSeven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerEight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerNine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerEleven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerTwelve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerThirteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerFourteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerFifteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerSixteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerSeventeen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerEighteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerNineteen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerTwenty)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerThree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerFour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerFive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerSix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerSeven)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerEight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerNine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerEleven)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerTwelve)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerThirteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerFourteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerFifteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerSixteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerSeventeen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerEighteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerNineteen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerTwenty)
+            </td>
+        </tr>
+    }
+
+</table>

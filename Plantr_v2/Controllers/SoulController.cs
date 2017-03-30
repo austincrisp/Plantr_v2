@@ -14,8 +14,15 @@ namespace Plantr_v2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Soul
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+            var souls = from s in db.Souls
+                        select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                souls = souls.Where(s => s.LastName.Contains(searchString)
+                                 || s.FirstName.Contains(searchString));
+            }
             return View(db.Souls.ToList());
         }
 
@@ -45,7 +52,7 @@ namespace Plantr_v2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Address,City,Zip,Phone,Comments")] Soul soul)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Address,City,Zip,Phone")] Soul soul)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +81,7 @@ namespace Plantr_v2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Address,AptNumber,City,Zip,Phone,Comments")] Soul soul)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Address,AptNumber,City,Zip,Phone")] Soul soul)
         {
             if (ModelState.IsValid)
             {
@@ -94,10 +101,12 @@ namespace Plantr_v2.Controllers
             return RedirectToAction("Index");
         }
 
+        /*
         public ActionResult ShowMap()
         {
             return View();
         }
+        */
 
         protected override void Dispose(bool disposing)
         {

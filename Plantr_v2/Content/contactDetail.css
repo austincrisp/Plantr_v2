@@ -6,8 +6,12 @@
     /*background-color: #b3d4fc;*/
 }
 
+.content-grid{
+    max-width: 1200px;
+}
+
 .contact-card {
-    margin: 25px;
+    margin: 50px auto;
     flex: 1 1 100%;
     max-width: 820px;
 }

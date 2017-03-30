@@ -23,6 +23,7 @@ namespace Plantr_v2.Models
         public DbSet<Soul> Souls { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<Upload> Uploads { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

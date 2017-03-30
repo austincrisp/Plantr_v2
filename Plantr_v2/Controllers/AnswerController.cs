@@ -14,21 +14,21 @@ namespace Plantr_v2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Answer
-        public ActionResult ViewAnswerOneIndex(Answer answer, int id)
+        public ActionResult AnswerOneIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
             return View(db.Answers.Where(a => a.CourseId == 1 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerOneCreate()
+        public ActionResult AnswerOneCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerOneCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerOneCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -43,21 +43,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerTwoIndex(Answer answer, int id)
+        public ActionResult AnswerTwoIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 2).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 2 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerTwoCreate()
+        public ActionResult AnswerTwoCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerTwoCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerTwoCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -72,21 +72,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerThreeIndex(Answer answer, int id)
+        public ActionResult AnswerThreeIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 3).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 3 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerThreeCreate()
+        public ActionResult AnswerThreeCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerThreeCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerThreeCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -101,21 +101,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerFourIndex(Answer answer, int id)
+        public ActionResult AnswerFourIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 4).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 4 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerFourCreate()
+        public ActionResult AnswerFourCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerFourCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerFourCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -130,21 +130,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerFivendex(Answer answer, int id)
+        public ActionResult AnswerFivendex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 5).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 5 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerFiveCreate()
+        public ActionResult AnswerFiveCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerFiveCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerFiveCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -159,21 +159,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerSixIndex(Answer answer, int id)
+        public ActionResult AnswerSixIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 6).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 6 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerSixCreate()
+        public ActionResult AnswerSixCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerSixCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerSixCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -188,21 +188,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerSevenIndex(Answer answer, int id)
+        public ActionResult AnswerSevenIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 7).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 7 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerSevenCreate()
+        public ActionResult AnswerSevenCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerSevenCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerSevenCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -217,21 +217,21 @@ namespace Plantr_v2.Controllers
         }
 
         // GET: Answer
-        public ActionResult ViewAnswerEightIndex(Answer answer, int id)
+        public ActionResult AnswerEightIndex(Answer answer, int id)
         {
             answer.SoulId = (int)TempData["SoulId"];
-            return View(db.Answers.Where(a => a.CourseId == 8).ToList());
+            return View(db.Answers.Where(a => a.CourseId == 8 && a.SoulId == id).ToList());
         }
 
         // GET: Answer/Create
-        public ActionResult SubmitAnswerEightCreate()
+        public ActionResult AnswerEightCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitAnswerEightCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerEightCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
         {
             if (ModelState.IsValid)
             {

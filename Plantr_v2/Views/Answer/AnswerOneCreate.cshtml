@@ -1,7 +1,7 @@
 ﻿@model Plantr_v2.Models.Answer
 
 <div class="container">
-    @using (Html.BeginForm("SubmitAnswerTwoCreate", "Answer"))
+    @using (Html.BeginForm("AnswerOneCreate", "Answer"))
     {
         @Html.AntiForgeryToken()
 
@@ -9,15 +9,14 @@
             <h4>Answer</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
             <div class="form-group">
-                @Html.LabelFor(model => model.AnswerOne, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="btn btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary">
-                        @Html.RadioButton("AnswerOne", "True", false, new { id = "AnswerOne" }) True
-                    </label>
-                    <label class="btn btn-danger">
-                        @Html.RadioButton("AnswerOne", "False", false, new { id = "AnswerOne" }) False
-                    </label>
+                @Html.LabelFor(model => model.AnswerOne, htmlAttributes: new { @class = "control-label col-md-2", id = "AnswerOne" })
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButtonFor(model => model.AnswerOne, true, new { id = "AnswerOne", type = "radio", name = "g2" }) True
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButtonFor(model => model.AnswerOne, false, new { id = "AnswerOne", type = "radio", name = "g2" }) False
                 </div>
             </div>
 
@@ -83,40 +82,56 @@
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerSeven, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                        @Html.EditorFor(model => model.AnswerSeven, new { htmlAttributes = new { @class ="form-control"} })
-                        @Html.ValidationMessageFor(model => model.AnswerSeven, "", new { @class = "text-danger" })
+                <div class="btn btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary">
+                        @Html.RadioButton("AnswerSeven", "True", false, new { id = "AnswerSeven" }) True
+                    </label>
+                    <label class="btn btn-danger">
+                        @Html.RadioButton("AnswerSeven", "False", false, new { id = "AnswerSeven" }) False
+                    </label>
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerEight, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerEight, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AnswerEight, "", new { @class = "text-danger" })
+                <div class="btn btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary">
+                        @Html.RadioButton("AnswerEight", "True", false, new { id = "AnswerEight" }) True
+                    </label>
+                    <label class="btn btn-danger">
+                        @Html.RadioButton("AnswerEight", "False", false, new { id = "AnswerEight" }) False
+                    </label>
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerNine, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerNine, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AnswerNine, "", new { @class = "text-danger" })
+                <div class="btn btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary">
+                        @Html.RadioButton("AnswerNine", "True", false, new { id = "AnswerNine" }) True
+                    </label>
+                    <label class="btn btn-danger">
+                        @Html.RadioButton("AnswerNine", "False", false, new { id = "AnswerNine" }) False
+                    </label>
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerTen, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerTen, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AnswerTen, "", new { @class = "text-danger" })
+                <div class="btn btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary">
+                        @Html.RadioButton("AnswerTen", "True", false, new { id = "AnswerTen" }) True
+                    </label>
+                    <label class="btn btn-danger">
+                        @Html.RadioButton("AnswerTen", "False", false, new { id = "AnswerTen" }) False
+                    </label>
                 </div>
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerEleven, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerEleven, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerEleven", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerEleven, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -124,7 +139,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerTwelve, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerTwelve, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerTwelve", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerTwelve, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -132,7 +147,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerThirteen, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerThirteen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerThirteen", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerThirteen, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -140,7 +155,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerFourteen, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerFourteen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerFourteen", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerFourteen, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -148,7 +163,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerFifteen, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerFifteen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerFifteen", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerFifteen, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -156,8 +171,40 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AnswerSixteen, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AnswerSixteen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextArea("AnswerSixteen", new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.AnswerSixteen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnswerSeventeen, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextArea("AnswerSeventeen", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AnswerSeventeen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnswerEighteen, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextArea("AnswerEighteen", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AnswerEighteen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnswerNineteen, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextArea("AnswerNineteen", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AnswerNineteen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnswerTwenty, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextArea("AnswerTwenty", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AnswerTwenty, "", new { @class = "text-danger" })
                 </div>
             </div>
 

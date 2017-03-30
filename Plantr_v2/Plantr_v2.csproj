@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44375</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -48,11 +48,19 @@
       <HintPath>..\packages\dotless.1.5.2\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Jmelosegui.Mvc.GoogleMap, Version=0.8.0.0, Culture=neutral, PublicKeyToken=bf3d287218d508fe, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jmelosegui.Mvc.Googlemap.0.8.0.0\lib\net45\Jmelosegui.Mvc.GoogleMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -120,9 +128,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -190,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SoulController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,10 +231,43 @@
     <Compile Include="Migrations\201703211454091_removedFKCourseFromAnswer.Designer.cs">
       <DependentUpon>201703211454091_removedFKCourseFromAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703272310354_removedCommentsFromSoul.cs" />
+    <Compile Include="Migrations\201703272310354_removedCommentsFromSoul.Designer.cs">
+      <DependentUpon>201703272310354_removedCommentsFromSoul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703281625155_errorValidationForSoulCreate.cs" />
+    <Compile Include="Migrations\201703281625155_errorValidationForSoulCreate.Designer.cs">
+      <DependentUpon>201703281625155_errorValidationForSoulCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703290152293_addedPhoneFormatAndRegEx.cs" />
+    <Compile Include="Migrations\201703290152293_addedPhoneFormatAndRegEx.Designer.cs">
+      <DependentUpon>201703290152293_addedPhoneFormatAndRegEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703290235466_formatPhoneNumber.cs" />
+    <Compile Include="Migrations\201703290235466_formatPhoneNumber.Designer.cs">
+      <DependentUpon>201703290235466_formatPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703290257152_formatPhoneNumber1.cs" />
+    <Compile Include="Migrations\201703290257152_formatPhoneNumber1.Designer.cs">
+      <DependentUpon>201703290257152_formatPhoneNumber1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703290320543_changePhoneStringToLong.cs" />
+    <Compile Include="Migrations\201703290320543_changePhoneStringToLong.Designer.cs">
+      <DependentUpon>201703290320543_changePhoneStringToLong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703290347208_changedPhoneBackToString.cs" />
+    <Compile Include="Migrations\201703290347208_changedPhoneBackToString.Designer.cs">
+      <DependentUpon>201703290347208_changedPhoneBackToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703300632327_addedUploadModel.cs" />
+    <Compile Include="Migrations\201703300632327_addedUploadModel.Designer.cs">
+      <DependentUpon>201703300632327_addedUploadModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Soul.cs" />
+    <Compile Include="Models\Upload.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -237,17 +276,24 @@
     <Compile Include="ViewModels\SoulAnswer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\answerCreate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\contactCreate.css" />
     <Content Include="Content\contactDetail.css" />
     <Content Include="Content\contactIndex.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\dialog-polyfill.css" />
+    <Content Include="Content\homePage.css" />
     <Content Include="Content\map.css" />
+    <Content Include="Content\mdl.css" />
     <Content Include="Content\modal.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\android-desktop.png" />
     <Content Include="img\Course1.png" />
     <Content Include="img\Course2.png" />
     <Content Include="img\Course3.png" />
@@ -256,20 +302,30 @@
     <Content Include="img\Course6.png" />
     <Content Include="img\Course7.png" />
     <Content Include="img\Course8.png" />
+    <Content Include="img\dog.png" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\ios-desktop.png" />
+    <Content Include="img\logo.png" />
     <Content Include="img\Thorns_Globe.jpg" />
+    <Content Include="img\user.jpg" />
     <Content Include="material.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\course.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\dialog-polyfill.js" />
+    <Content Include="Scripts\jmelosegui.googlemap.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\map.js" />
+    <Content Include="Scripts\markerclusterer.js" />
     <Content Include="Scripts\modal.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
@@ -313,11 +369,24 @@
     <Content Include="Views\Soul\Edit.cshtml" />
     <Content Include="Views\Soul\Index.cshtml" />
     <Content Include="Views\Soul\Details.cshtml" />
-    <Content Include="Views\Answer\SubmitAnswerOneCreate.cshtml" />
-    <Content Include="Views\Answer\ViewAnswerOneIndex.cshtml" />
-    <Content Include="Views\Answer\SubmitAnswerTwoCreate.cshtml" />
-    <Content Include="Views\Answer\ViewAnswerTwoIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerOneCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerOneIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerTwoCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerTwoIndex.cshtml" />
     <Content Include="Views\Soul\ShowMap.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Shared\_SoulLayout.cshtml" />
+    <Content Include="Views\Answer\AnswerThreeIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerFourIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerFiveIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerSixIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerSevenIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerEightIndex.cshtml" />
+    <Content Include="Views\Shared\_DBLayout.cshtml" />
+    <Content Include="Views\Shared\_SoulDetailLayout.cshtml" />
+    <Content Include="Views\Shared\_CreateSoulLayout.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\User\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,7 +397,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703170317523_Initial.resx">
@@ -354,6 +422,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703211454091_removedFKCourseFromAnswer.resx">
       <DependentUpon>201703211454091_removedFKCourseFromAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703272310354_removedCommentsFromSoul.resx">
+      <DependentUpon>201703272310354_removedCommentsFromSoul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703281625155_errorValidationForSoulCreate.resx">
+      <DependentUpon>201703281625155_errorValidationForSoulCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290152293_addedPhoneFormatAndRegEx.resx">
+      <DependentUpon>201703290152293_addedPhoneFormatAndRegEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290235466_formatPhoneNumber.resx">
+      <DependentUpon>201703290235466_formatPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290257152_formatPhoneNumber1.resx">
+      <DependentUpon>201703290257152_formatPhoneNumber1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290320543_changePhoneStringToLong.resx">
+      <DependentUpon>201703290320543_changePhoneStringToLong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703290347208_changedPhoneBackToString.resx">
+      <DependentUpon>201703290347208_changedPhoneBackToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703300632327_addedUploadModel.resx">
+      <DependentUpon>201703300632327_addedUploadModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,18 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=BenchNine');
+
+.comingSoonWaterMark{
+    height: 800px;
+    background-image: url("/img/logo.png");
+    background-repeat: no-repeat;
+}
+
+.welcome_text {
+    font-family: 'BenchNine', sans-serif;
+    font-size: 48pt;
+}
+.dashboardWrapper{
+    max-width: 1200px;
+    margin: auto;
+}

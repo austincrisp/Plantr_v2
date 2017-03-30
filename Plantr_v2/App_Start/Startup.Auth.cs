@@ -55,8 +55,8 @@ namespace Plantr_v2
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            // appId: "276325859489104",
+            // appSecret: "8551100db632b2f35d5ee323b8ddbc4f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

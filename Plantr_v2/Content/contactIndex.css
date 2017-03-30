@@ -2,31 +2,27 @@
 
 .contactListWrapper {
     width: 75%;
-    margin: 0 auto;
+    margin: 80px auto;
     padding-top: 20px;
     padding-bottom: 40px;
     padding-right: 40px;
     padding-left: 40px;
-    background-color: #5f7c8a;
-    border-radius: 10px;
 }
 
 ul.two-columns li {
-    width: 50%;
+    width: 20%;
+    margin-bottom: 30px;
     float: left;
-    margin: 0;
-    padding: 20px;
     list-style-type: none;
-    background-color: #5f7c8a;
     color: white;
-    border-radius: 10px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 12pt;
+    color: #37474f;
 }
 
 ul.two-columns a:hover{
     text-decoration: none;
-    color: #e91c63;
+    background-color: #eceff1;
 }
 
 ul.two-columns a:visited{
@@ -44,9 +40,7 @@ ul.two-columns a:visited{
 }
 
 .contactItem {
-    background-color: white;
     width: 100%;
-    height: 50px;
     transition-duration: 0.5s;
     position: relative;
     padding-top: 30px;
@@ -65,7 +59,7 @@ ul.two-columns a:visited{
 
     .contactItem:hover {
         cursor: pointer;
-        background-color: #8ac249;
+        color: #8ac249;
     }
 
     .contactItem .close {

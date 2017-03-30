@@ -1,0 +1,22 @@
+﻿@model Plantr_v2.Models.ImageUploadViewModel
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+
+<div class="container">
+    @using (Html.BeginForm("Upload", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <br />
+        <br />
+        <br />
+        <p>
+            <input type="file" name="File" class="form-control" />
+        </p>
+        <p>
+            <input type="submit" value="Upload File" class="btn btn-warning" />
+        </p>
+    }
+</div>
