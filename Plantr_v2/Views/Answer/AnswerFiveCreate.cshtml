@@ -122,13 +122,14 @@
             </div>
 
             <div class="form-group">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    @Html.LabelFor(model => model.AnswerEleven, htmlAttributes: new { @class = "mdl-textfield__label" })
-                    <div class="input-group">
-                        @Html.EditorFor(model => model.AnswerEleven, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerEleven", type = "text" } })
-                    </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerEleven", "True", true, new { id = "radio-21" })
+                    <label for="radio-19">True</label>
                 </div>
-                @Html.ValidationMessageFor(model => model.AnswerEleven, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerEleven", "False", false, new { id = "radio-22" })
+                    <label for="radio-20">False</label>
+                </div>
             </div>
 
             <div class="form-group">

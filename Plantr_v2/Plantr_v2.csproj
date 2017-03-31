@@ -387,6 +387,12 @@
     <Content Include="Views\Shared\_CreateSoulLayout.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\User\Upload.cshtml" />
+    <Content Include="Views\Answer\AnswerThreeCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerFourCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerFiveCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerSixCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerSevenCreate.cshtml" />
+    <Content Include="Views\Answer\AnswerEightCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

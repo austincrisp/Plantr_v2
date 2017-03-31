@@ -23,6 +23,7 @@ namespace Plantr_v2
             bundles.Add(new ScriptBundle("~/bundles/myscripts").Include(
                       "~/Scripts/course.js",
                       "~/Scripts/map.js",
+                      "~/Scripts/modal.js",
                       "~/Scripts/dialog-polyfill.js",
                       "~/Scripts/respond.js"));
 

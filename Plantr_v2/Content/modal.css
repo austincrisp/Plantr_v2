@@ -1,153 +1,180 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-.button {
-    margin: 40px auto;
-    font-size: 72px;
-    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
-    text-decoration: none;
-    text-shadow: 1px 1px 0px #fff;
-    font-weight: 400;
-    color: #666;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    padding: 20px 70px 30px;
-    position: relative;
-    top: 50px;
-    background: #eee;
-    width: 300px;
-    display: block;
-    text-align: center;
-    box-shadow: 1px 1px 1px #fff;
-    -moz-box-shadow: 1px 1px 1px #fff;
-    -webkit-box-shadow: 1px 1px 1px #fff;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-}
-
-    .button:hover {
-        color: #333;
-        background: #eeffff;
-        -moz-transition: all 0.2s ease-out;
-        -webkit-transition: all 0.2s ease-out;
-        -o-transition: all 0.5s ease-out;
-        transition: all 0.5s ease-out;
-    }
-
-.modalbg {
+﻿/**
+ * Material Modal CSS
+ */
+.modal {
+    will-change: visibility, opacity;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
     top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0);
-    z-index: 99999;
-    -moz-transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
-    -webkit-transition-delay: 0.2s;
-    -moz-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    -transition-delay: 0.2s;
-    display: block;
-    pointer-events: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition-delay: $modal-delay;
+    transition-delay: $modal-delay;
 }
 
-    .modalbg .dialog {
-        width: 400px;
-        position: relative;
-        top: -1000px;
-        margin: 10% auto;
-        padding: 5px 20px 13px 20px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: #fff;
-        background: -moz-linear-gradient(#fff, #ccc);
-        background: -webkit-linear-gradient(#fff, #ccc);
-        background: -o-linear-gradient(#fff, #ccc);
-        box-shadow: 0 0 10px #000;
-        -moz-box-shadow: 0 0 10px #000;
-        -webkit-box-shadow: 0 0 10px #000;
-    }
+.modal--active {
+    visibility: visible;
+    opacity: 1;
+}
 
-        .modalbg .dialog .ie7 {
-            filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
-        }
+.modal--align-top {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
 
-    .modalbg:target {
-        display: block;
-        pointer-events: auto;
-        background: rgba(4, 10, 30, 0.8);
-        -moz-transition: all 0.5s ease-out;
-        -webkit-transition: all 0.5s ease-out;
-        -o-transition: all 0.5s ease-out;
-        transition: all 0.5s ease-out;
-    }
+.modal__bg {
+    background: transparent;
+}
 
-        .modalbg:target .dialog {
-            top: -20px;
-            -moz-transition: all 0.2s ease-out;
-            -webkit-transition: all 0.2s ease-out;
-            -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
-            -webkit-transition-delay: 0.4s;
-            -moz-transition-delay: 0.4s;
-            -o-transition-delay: 0.4s;
-            -transition-delay: 0.4s;
-        }
+.modal__dialog {
+    max-width: 600px;
+    padding: 1.2rem;
+}
 
-.close {
-    background: #606061;
-    color: #FFFFFF;
-    line-height: 25px;
+.modal__content {
+    will-change: transform, opacity;
+    position: relative;
+    padding: 2.4rem;
+    background: #fff;
+    background-clip: padding-box;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+    opacity: 0;
+    -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal__content--active {
+    opacity: 1;
+}
+
+.modal__close {
+    z-index: 1100;
+    cursor: pointer;
+}
+
+.modal__trigger {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal__trigger--active {
+    z-index: 10;
+}
+
+
+#modal__temp {
+    will-change: transform, opacity;
     position: absolute;
-    right: -12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.demo-btns header {
+    padding: 7vh 10vw;
+    background: #ffebee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+    .demo-btns header h1 {
+        margin: 0;
+        color: rgba(0,0,0,0.54);
+        font-weight: 300;
+    }
+
+.demo-btns .info {
+    background: #f44336;
+    padding: 3vh 10vw;
+    height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+
+.demo-btns p {
     text-align: center;
-    top: -10px;
-    width: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #000;
-    -moz-box-shadow: 0 0 10px #000;
-    -webkit-box-shadow: 0 0 10px #000;
-    -moz-transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-    -webkit-transition-delay: 0.2s;
-    -moz-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    -transition-delay: 0.2s;
+    color: #fff;
 }
 
-    .close .ie7 {
-        filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
+.demo-btns .link {
+    font-size: 20px;
+}
+
+.demo-btns .modal__trigger {
+    margin-right: 3px;
+}
+
+@media (max-width: 640px) {
+    .demo-btns .modal__trigger {
+        margin-bottom: 0.8rem;
+    }
+}
+
+.demo-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1.2rem;
+    padding: 0.6rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+    .demo-close svg {
+        width: 24px;
+        fill: #fff;
+        pointer-events: none;
+        vertical-align: top;
     }
 
-    .close:hover {
-        background: #00d9ff;
-        -moz-transition: all 0.5s ease-out;
-        -webkit-transition: all 0.5s ease-out;
-        -o-transition: all 0.5s ease-out;
-        transition: all 0.5s ease-out;
+    .demo-close:hover {
+        background: rgba(0,0,0,0.6);
     }
-
-.fineprint {
-    font-style: italic;
-    font-size: 10px;
-    color: #646;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
