@@ -11,7 +11,6 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="form-group">
-                @Html.LabelFor(model => model.AnswerOne, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="md-radio md-radio-inline">
                     @Html.RadioButton("AnswerOne", "True", true, new { id = "radio-1" })
                     <label for="radio-1">True</label>
