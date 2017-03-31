@@ -45,7 +45,7 @@
 <div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
     <div class="modal__dialog">
         <div class="modal__content">
-            <h1>Are You Sure</h1>
+            <h1 style="background-color: #fff;">Are You Sure</h1>
             <button type="button" class="mdl-button" onclick="location.href='@Url.Action("Delete", "Soul", new { id = Model.Item1.Id })'">Yes</button>
             <button type="button" class="mdl-button modal__close">No</button>
             <!-- modal close button -->
@@ -101,7 +101,7 @@
                     <img class="img-responsive" src="~/img/Course2.png">
                 </div>
                 <div class="mc-description">
-                    Lesson Two Description
+                    
                 </div>
             </div>
             <a class="btn mc-btn-action">
@@ -244,7 +244,7 @@
             </a>
             <div class="mc-footer">
                 <strong>Answers</strong><br />
-                <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" value="Submit" onclick="location.href='@Url.Action("AnsweSevenCreate", "Answer", new { id = Model.Item1.Id })'" />
+                <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" value="Submit" onclick="location.href='@Url.Action("AnswerSevenCreate", "Answer", new { id = Model.Item1.Id })'" />
                 <input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" value="View" style="margin-left: 20px;" onclick="location.href='@Url.Action("AnswerSevenIndex", "Answer", new { id = Model.Item1.Id })'" />
             </div>
         </article>

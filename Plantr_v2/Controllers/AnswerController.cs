@@ -57,7 +57,7 @@ namespace Plantr_v2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AnswerTwoCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerTwoCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen")] Answer answer)
         {
             if (ModelState.IsValid)
             {
@@ -202,7 +202,7 @@ namespace Plantr_v2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AnswerSevenCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen,AnswerEighteen,AnswerNineteen,AnswerTwenty")] Answer answer)
+        public ActionResult AnswerSevenCreate([Bind(Include = "Id,SoulId,AnswerOne,AnswerTwo,AnswerThree,AnswerFour,AnswerFive,AnswerSix,AnswerSeven,AnswerEight,AnswerNine,AnswerTen,AnswerEleven,AnswerTwelve,AnswerThirteen,AnswerFourteen,AnswerFifteen,AnswerSixteen,AnswerSeventeen")] Answer answer)
         {
             if (ModelState.IsValid)
             {

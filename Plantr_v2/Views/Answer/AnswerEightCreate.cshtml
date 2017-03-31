@@ -1,7 +1,246 @@
-﻿
-@{
-    ViewBag.Title = "AnswerEightCreate";
+﻿@model Plantr_v2.Models.Answer
+
+
+<div class="form_container">
+    <h2 class="page_title_text">Submit Lesson Eight Answers</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnswerOne, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerOne", "True", true, new { id = "radio-1" })
+                    <label for="radio-1">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerOne", "False", false, new { id = "radio-2" })
+                    <label for="radio-2">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerTwo", "True", true, new { id = "radio-3" })
+                    <label for="radio-3">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerTwo", "False", false, new { id = "radio-4" })
+                    <label for="radio-4">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerThree", "True", true, new { id = "radio-5" })
+                    <label for="radio-5">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerThree", "False", false, new { id = "radio-6" })
+                    <label for="radio-6">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerFour", "True", true, new { id = "radio-7" })
+                    <label for="radio-7">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerFour", "False", false, new { id = "radio-8" })
+                    <label for="radio-8">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerFive", "True", true, new { id = "radio-9" })
+                    <label for="radio-9">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerFive", "False", false, new { id = "radio-10" })
+                    <label for="radio-10">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerSix", "True", true, new { id = "radio-11" })
+                    <label for="radio-11">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerSix", "False", false, new { id = "radio-12" })
+                    <label for="radio-12">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerSeven", "True", true, new { id = "radio-13" })
+                    <label for="radio-13">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerSeven", "False", false, new { id = "radio-14" })
+                    <label for="radio-14">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerEight", "True", true, new { id = "radio-15" })
+                    <label for="radio-15">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerEight", "False", false, new { id = "radio-16" })
+                    <label for="radio-16">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerNine", "True", true, new { id = "radio-17" })
+                    <label for="radio-17">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerNine", "False", false, new { id = "radio-18" })
+                    <label for="radio-18">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerTen", "True", true, new { id = "radio-19" })
+                    <label for="radio-19">True</label>
+                </div>
+                <div class="md-radio md-radio-inline">
+                    @Html.RadioButton("AnswerTen", "False", false, new { id = "radio-20" })
+                    <label for="radio-20">False</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerEleven, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerEleven, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerEleven", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerEleven, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerTwelve, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerTwelve, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerTwelve", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerTwelve, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerThirteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerThirteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerThirteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerThirteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerFourteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerFourteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerFourteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerFourteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerFifteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerFifteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerFifteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerFifteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerSixteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerSixteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerSixteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerSixteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerSeventeen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerSeventeen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerSeventeen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerSeventeen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerEighteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerEighteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerEighteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerEighteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerNineteen, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerNineteen, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerNineteen", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerNineteen, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+            <div class="form-group">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    @Html.LabelFor(model => model.AnswerTwenty, htmlAttributes: new { @class = "mdl-textfield__label" })
+                    <div class="input-group">
+                        @Html.EditorFor(model => model.AnswerTwenty, new { htmlAttributes = new { @class = "mdl-textfield__input", name = "AnswerTwenty", type = "text" } })
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.AnswerTwenty, "", new { @class = "", @style = "color: red; font-size: 8pt; opacity: 0.6;" })
+            </div>
+
+        </fieldset>
+        <div class="form-group" style="margin-left: 150px; margin-top: 60px;">
+            <button type="submit" class="button_create" style="margin-right: 20px; background-color: #4bb500;">
+                <span>Add</span>
+                <div class="icon">
+                    <i class="fa fa-plus"></i>
+                </div>
+            </button>
+
+        </div>
+    }
+    <button class="button_create" style="margin-left: 380px; bottom: 52px;" onclick="location.href='@Url.Action("Index", "Soul")'">
+        <span>Cancel</span>
+        <div class="icon">
+            <i class="fa fa-remove"></i>
+        </div>
+    </button>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
-
-<h2>AnswerEightCreate</h2>
-
