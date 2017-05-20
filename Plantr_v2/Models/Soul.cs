@@ -22,7 +22,8 @@ namespace Plantr_v2.Models
         [Required(ErrorMessage = "An Address is Required")]
         public string Address { get; set; }
 
-        public int? AptNumber { get; set; }
+        [DisplayFormat(ConvertEmptyStringToNull = false)]
+        public string AptNumber { get; set; }
 
         [Required(ErrorMessage = "A City is Required")]
         public string City { get; set; }

@@ -52,7 +52,7 @@ namespace Plantr_v2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Address,City,Zip,Phone")] Soul soul)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Address,AptNumber,City,Zip,Phone")] Soul soul)
         {
             if (ModelState.IsValid)
             {
