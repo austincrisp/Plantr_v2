@@ -14,16 +14,20 @@ namespace Plantr_v2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Soul
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string option, string search)
         {
-            var souls = from s in db.Souls
-                        select s;
-            if (!String.IsNullOrEmpty(searchString))
+            if (option == "Address")
             {
-                souls = souls.Where(s => s.LastName.Contains(searchString)
-                                 || s.FirstName.Contains(searchString));
+                return View(db.Souls.Where(s => s.Address == search || search == null).ToList());
             }
-            return View(db.Souls.ToList());
+            else if (option == "Name")
+            {
+                return View(db.Souls.Where(s => s.LastName == search || search == null).ToList());
+            }
+            else
+            {
+                return View(db.Souls.ToList());
+            }
         }
 
         // GET: Soul/Details/5
